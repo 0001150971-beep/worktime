@@ -21,6 +21,27 @@ main {
     padding: 20px;
 }
 
+/* FILTROS */
+.filtros {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filtros button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    background-color: #004aad;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.filtros button:hover {
+    background-color: #003080;
+}
+
+/* TABELA */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -38,6 +59,7 @@ th {
     background-color: #e6e6e6;
 }
 
+/* CONTATOS */
 .contatos h2 {
     margin-bottom: 15px;
 }

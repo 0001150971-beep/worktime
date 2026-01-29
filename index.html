@@ -14,6 +14,15 @@
 
 <main>
 
+    <!-- FILTROS -->
+    <div class="filtros">
+        <button onclick="filtrar('todos')">Todos</button>
+        <button onclick="filtrar('manha')">Manhã</button>
+        <button onclick="filtrar('tarde')">Tarde</button>
+        <button onclick="filtrar('noite')">Noite</button>
+    </div>
+
+    <!-- TABELA -->
     <table>
         <thead>
             <tr>
@@ -23,75 +32,78 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Setor Pedagógico -->
-            <tr>
+
+            <!-- SETOR PEDAGÓGICO -->
+            <tr data-periodo="manha">
                 <td>Setor Pedagógico</td>
                 <td>Joyce, Natalia</td>
                 <td>08:00 às 17:00</td>
             </tr>
-            <tr>
+            <tr data-periodo="tarde">
                 <td>Setor Pedagógico</td>
                 <td>Joana</td>
                 <td>13:30 às 22:30</td>
             </tr>
 
-            <!-- Setor Técnico -->
-            <tr>
+            <!-- SETOR TÉCNICO -->
+            <tr data-periodo="manha">
                 <td>Setor Técnico</td>
                 <td>Glaucia</td>
                 <td>08:00 às 17:00</td>
             </tr>
-            <tr>
+            <tr data-periodo="tarde">
                 <td>Setor Técnico</td>
                 <td>Paula</td>
                 <td>13:30 às 22:30</td>
             </tr>
 
-            <!-- Secretaria -->
-            <tr>
+            <!-- SECRETARIA -->
+            <tr data-periodo="manha">
                 <td>Secretaria</td>
                 <td>Alecia</td>
                 <td>08:00 às 17:00</td>
             </tr>
-            <tr>
+            <tr data-periodo="tarde">
                 <td>Secretaria</td>
                 <td>Ariane</td>
                 <td>12:00 às 21:00</td>
             </tr>
 
-            <!-- Núcleo -->
-            <tr>
+            <!-- NÚCLEO -->
+            <tr data-periodo="manha">
                 <td>Núcleo</td>
                 <td>Adriana, Scarlet, Thuane, Giovana</td>
                 <td>08:00 às 17:00</td>
             </tr>
 
-            <!-- Biblioteca -->
-            <tr>
+            <!-- BIBLIOTECA -->
+            <tr data-periodo="tarde">
                 <td>Biblioteca</td>
                 <td>Sem bibliotecária no momento</td>
                 <td>11:00 às 20:00</td>
             </tr>
 
-            <!-- Instrutores -->
-            <tr>
+            <!-- INSTRUTORES -->
+            <tr data-periodo="manha">
                 <td>Instrutores</td>
                 <td>Ana Letícia, Sandra</td>
                 <td>08:00 às 17:00</td>
             </tr>
-            <tr>
+            <tr data-periodo="tarde">
                 <td>Instrutores</td>
                 <td>Romulo, Petronio, Mizael</td>
                 <td>13:30 às 22:30</td>
             </tr>
-            <tr>
+            <tr data-periodo="noite">
                 <td>Instrutores</td>
                 <td>Almir</td>
                 <td>18:30 às 22:30</td>
             </tr>
+
         </tbody>
     </table>
 
+    <!-- CONTATOS -->
     <section class="contatos">
         <h2>Contatos por Setor</h2>
 
@@ -138,6 +150,24 @@
 <footer>
     <p>SENAI • Informações válidas de segunda a sexta-feira</p>
 </footer>
+
+<!-- SCRIPT DO FILTRO -->
+<script>
+function filtrar(periodo) {
+    const linhas = document.querySelectorAll("tbody tr");
+
+    linhas.forEach(linha => {
+        if (periodo === "todos") {
+            linha.style.display = "";
+        } else {
+            linha.style.display =
+                linha.getAttribute("data-periodo") === periodo
+                ? ""
+                : "none";
+        }
+    });
+}
+</script>
 
 </body>
 </html>
